@@ -123,7 +123,7 @@ mongo.connect(mongoURL, (err, db) => {
           if (err) throw err;
           
           const shortURL = idToUrl(doc.sequence_id, req);
-          const jsonResponse = urlJSON(doc.originalURL, shortURL);
+          const jsonResponse = urlJSON(doc.original_url, shortURL);
           
           res.json(jsonResponse);
         });
