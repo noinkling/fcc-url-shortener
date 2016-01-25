@@ -4,7 +4,7 @@ const mongo = require("mongodb").MongoClient;
 const isValidURL = require("valid-url").isWebUri;
 
 const app = express();
-const mongoURL = `mongodb://${process.env.IP}:27017/url-shortener`;
+const mongoURL = process.env.MONGOLAB_URI || `mongodb://${process.env.IP}:27017/url-shortener`;
 
 app.set('views', __dirname);
 app.set('view engine', 'jade');
